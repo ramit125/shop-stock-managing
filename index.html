@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080812">
+  <meta name="description" content="A little mystery, a lot of love. Open your birthday surprise.">
+  <title>A Birthday Surprise, Just for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas class="celebration-canvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Birthday surprise home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>THE GOOD STUFF</span>
+    </a>
+    <button class="music-toggle" type="button" aria-pressed="false" aria-label="Turn background music on">
+      <span class="music-icon" aria-hidden="true">♫</span>
+      <span class="music-label">SOUND OFF</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="intro-screen screen active" id="intro" aria-labelledby="intro-title">
+      <div class="intro-stars" aria-hidden="true"></div>
+      <div class="intro-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE NOTE FROM YOUR FAVORITE PERSON <span class="eyebrow-line"></span></p>
+        <h1 id="intro-title">Hey! Someone Has<br><span class="gradient-text">a Surprise For You!</span></h1>
+        <p class="intro-copy">A tiny mystery. A very big reason to celebrate.</p>
+        <button class="primary-button start-button" type="button">
+          <span>Start the surprise</span><span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <p class="quiet-note"><span class="sparkle" aria-hidden="true">✦</span> Best experienced with sound on</p>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span></span> SOMETHING GOOD IS COMING</div>
+    </section>
+
+    <section class="gift-screen screen" id="gift" aria-labelledby="gift-title" hidden>
+      <div class="section-inner gift-inner">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR MOMENT, YOUR MAJESTY <span class="eyebrow-line"></span></p>
+        <h2 id="gift-title">Something Special Is<br><span class="gradient-text">Waiting For You!</span></h2>
+        <p class="section-copy">No hints. No peeking. Just tap the gift.</p>
+        <button class="gift-button" type="button" aria-label="Open your birthday gift">
+          <span class="gift-halo"></span>
+          <span class="gift-box" aria-hidden="true">
+            <span class="gift-lid"><span class="lid-ribbon"></span><span class="lid-bow"></span></span>
+            <span class="gift-body"><span class="body-ribbon"></span><span class="gift-shine"></span></span>
+          </span>
+          <span class="gift-shadow" aria-hidden="true"></span>
+          <span class="gift-spark gift-spark-one" aria-hidden="true">✦</span>
+          <span class="gift-spark gift-spark-two" aria-hidden="true">✧</span>
+          <span class="gift-spark gift-spark-three" aria-hidden="true">✦</span>
+        </button>
+        <p class="tap-hint"><span class="tap-dot"></span> TAP TO UNWRAP THE GOOD STUFF</p>
+      </div>
+      <div class="countdown" aria-live="assertive" aria-atomic="true" hidden></div>
+    </section>
+
+    <div class="birthday-content" id="birthday-content" hidden>
+      <section class="birthday-hero section" id="birthday" aria-labelledby="birthday-title">
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span class="eyebrow-line"></span> TODAY IS YOURS <span class="eyebrow-line"></span></p>
+          <p class="hero-pretitle">IT'S JAGRUTI'S DAY</p>
+          <h2 id="birthday-title" class="birthday-title">HAPPY<br><span class="gradient-text">BIRTHDAY!</span></h2>
+          <!-- CUSTOMIZE: Replace the name below with your partner's name. -->
+          <p class="birthday-name">For <span>Jagruti</span><i aria-hidden="true">✦</i></p>
+          <p class="hero-message">Another trip around the sun. Still one of a kind.</p>
+          <a class="text-link" href="#memories">The good memories <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="balloons" aria-hidden="true">
+          <span class="balloon balloon-purple"></span><span class="balloon balloon-blue"></span>
+          <span class="balloon balloon-pink"></span><span class="balloon balloon-violet"></span>
+        </div>
+        <div class="floating-hearts" aria-hidden="true"><span>♡</span><span>♡</span><span>♡</span></div>
+        <span class="hero-star hero-star-one" aria-hidden="true">✦</span>
+        <span class="hero-star hero-star-two" aria-hidden="true">✧</span>
+        <span class="hero-star hero-star-three" aria-hidden="true">✦</span>
+      </section>
+
+      <section class="memories-section section" id="memories" aria-labelledby="memories-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> THE HIGHLIGHT REEL <span class="eyebrow-line"></span></p>
+            <h2 id="memories-title">Proof we're <span class="gradient-text">pretty iconic.</span></h2>
+            <p class="section-copy">Six little reminders of the big laughs, the late nights, and everything in between.</p>
+          </div>
+          <div class="gallery-grid">
+            <!-- CUSTOMIZE PHOTOS: In script.js, replace each PHOTO_SOURCES item's src with a local image path, e.g. "photos/best-day.jpg". -->
+            <button class="photo-card photo-card-one" type="button" data-photo="0" aria-label="View memory one">
+              <img alt="A colorful placeholder for memory one" loading="lazy">
+              <span class="photo-label"><span>01</span> THE CLASSIC</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+            <button class="photo-card photo-card-two" type="button" data-photo="1" aria-label="View memory two">
+              <img alt="A colorful placeholder for memory two" loading="lazy">
+              <span class="photo-label"><span>02</span> THE ADVENTURE</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+            <button class="photo-card photo-card-three" type="button" data-photo="2" aria-label="View memory three">
+              <img alt="A colorful placeholder for memory three" loading="lazy">
+              <span class="photo-label"><span>03</span> NO CONTEXT</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+            <button class="photo-card photo-card-four" type="button" data-photo="3" aria-label="View memory four">
+              <img alt="A colorful placeholder for memory four" loading="lazy">
+              <span class="photo-label"><span>04</span> THE CREW</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+            <button class="photo-card photo-card-five" type="button" data-photo="4" aria-label="View memory five">
+              <img alt="A colorful placeholder for memory five" loading="lazy">
+              <span class="photo-label"><span>05</span> CORE MEMORY</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+            <button class="photo-card photo-card-six" type="button" data-photo="5" aria-label="View memory six">
+              <img alt="A colorful placeholder for memory six" loading="lazy">
+              <span class="photo-label"><span>06</span> MORE OF THIS</span><span class="photo-zoom" aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p class="gallery-footnote"><span aria-hidden="true">✧</span> Tap any photo to get the full picture.</p>
+        </div>
+      </section>
+
+      <section class="cake-section section" id="cake" aria-labelledby="cake-title">
+        <div class="section-inner cake-layout">
+          <div class="cake-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> THE IMPORTANT BUSINESS <span class="eyebrow-line"></span></p>
+            <h2 id="cake-title">Make a wish.<br><span class="gradient-text">Make it count.</span></h2>
+            <p class="section-copy">Take a second. Think of something wonderful. Then blow out the candles and send that wish on its way.</p>
+            <button class="primary-button wish-button" type="button"><span>Make a Wish!</span><span class="button-arrow" aria-hidden="true">✦</span></button>
+            <p class="wish-message" aria-live="polite" hidden>Your wish is officially out in the universe. Good things are coming. ✨</p>
+          </div>
+          <div class="cake-scene" aria-label="A birthday cake with three glowing candles">
+            <div class="cake-glow"></div>
+            <div class="candles">
+              <span class="candle candle-left"><i class="flame"></i></span>
+              <span class="candle candle-center"><i class="flame"></i></span>
+              <span class="candle candle-right"><i class="flame"></i></span>
+            </div>
+            <div class="cake-top"><span class="icing-drip drip-one"></span><span class="icing-drip drip-two"></span><span class="icing-drip drip-three"></span></div>
+            <div class="cake-layer cake-layer-top"></div>
+            <div class="cake-layer cake-layer-bottom"></div>
+            <div class="cake-plate"></div>
+            <span class="cake-spark cake-spark-one" aria-hidden="true">✧</span><span class="cake-spark cake-spark-two" aria-hidden="true">✦</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="message-section section" id="message" aria-labelledby="message-title">
+        <div class="message-card">
+          <span class="message-corner message-corner-one" aria-hidden="true">✦</span>
+          <span class="message-corner message-corner-two" aria-hidden="true">✧</span>
+          <p class="eyebrow"><span class="eyebrow-line"></span> FROM YOUR FAVORITE PERSON <span class="eyebrow-line"></span></p>
+          <h2 id="message-title">A Message <span class="gradient-text">For You</span></h2>
+          <!-- CUSTOMIZE MESSAGE: Edit the text inside the #typed-message element. -->
+          <p class="typed-message" id="typed-message" data-message="Happy birthday, my Guddi—my favorite person, my safest place, and the one who makes ordinary days feel like something special. I love your laugh, your heart, and all the little things that make you unmistakably you. I hope the year ahead brings you everything you've been wishing for—and gives me a million more moments by your side. I love you, today and always."> <span class="typing-cursor" aria-hidden="true"></span></p>
+          <p class="message-signoff">All my love, always <span aria-hidden="true">♡</span></p>
+        </div>
+      </section>
+
+      <section class="final-section section" id="final-surprise" aria-labelledby="final-title">
+        <div class="final-content">
+          <p class="eyebrow"><span class="eyebrow-line"></span> BUT WAIT, THERE'S MORE <span class="eyebrow-line"></span></p>
+          <h2 id="final-title">You thought we were <span class="gradient-text">done?</span></h2>
+          <p class="section-copy">There is one more thing. This one's just for you.</p>
+          <button class="primary-button last-surprise-button" type="button"><span>One Last Surprise</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+          <div class="secret-message" aria-live="polite" hidden>
+            <span class="secret-star" aria-hidden="true">✦</span>
+            <p class="secret-kicker">YOUR SECRET MESSAGE</p>
+            <!-- CUSTOMIZE SECRET: Edit this final surprise message. -->
+            <p class="secret-copy">Of all the people in this world, you're the one I'd choose again and again. You're my favorite hello, my safest place, and the person I want beside me for every adventure still to come. I love you more than this little page could ever say. Happy birthday, Jagruti—my Guddi, my love. <span aria-hidden="true">💙</span></p>
+            <span class="secret-signoff">THE BEST IS STILL AHEAD</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>MADE WITH <span class="footer-heart" aria-label="love">♥</span> FOR A VERY GOOD HUMAN</span>
+    <span>MAKE THIS YEAR YOURS <span aria-hidden="true">✦</span></span>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close photo preview">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">←</button>
+    <figure class="lightbox-figure">
+      <img class="lightbox-image" alt="">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">→</button>
+    <p class="lightbox-counter" aria-live="polite"></p>
+  </div>
+
+  <!-- CUSTOMIZE MUSIC: Add licensed audio files at the paths configured in MUSIC_TRACKS in script.js. -->
+  <audio class="birthday-audio" loop preload="none"></audio>
+</body>
+</html>
